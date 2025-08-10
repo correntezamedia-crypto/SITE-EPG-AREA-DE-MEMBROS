@@ -1,4 +1,8 @@
-require('dotenv').config();
+// A linha abaixo só será executada se o servidor NÃO estiver no Render.
+if (process.env.NODE_ENV !== 'production' && !process.env.RENDER) {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
